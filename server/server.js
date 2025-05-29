@@ -18,7 +18,11 @@ app.use('/api/stripe', stripeWebhookRoute);
 connectDB(); // Connect to DB when server starts
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ['https://fademebets.com', 'http://localhost:3000'],
+  credentials: true,
+}));
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected'))

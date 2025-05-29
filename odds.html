@@ -698,7 +698,7 @@
                 }
 
                 try {
-                    const response = await fetch('http://localhost:5000/api/auth/subscription-status', {
+                    const response = await fetch('https://fademebets.onrender.com/api/auth/subscription-status', {
                         method: 'GET',
                         headers: {
                             'Authorization': `Bearer ${token}`
@@ -727,7 +727,7 @@
 
         async function loadEVPicks() {
             try {
-                const response = await fetch('http://localhost:5000/api/oddstrader');
+                const response = await fetch('https://fademebets.onrender.com/api/oddstrader');
                 const data = await response.json();
 
                 allPicks = data.picks || [];
